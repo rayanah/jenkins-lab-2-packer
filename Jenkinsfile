@@ -15,6 +15,7 @@ pipeline {
     stages {
         stage ('build') {
             steps {
+                sh "docker login -u ${CREDS_USR} -p ${CREDS_PSW}"
                 sh "make"
                 sh "make build"
             }
