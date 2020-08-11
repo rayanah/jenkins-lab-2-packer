@@ -16,6 +16,7 @@ pipeline {
             steps {
 	       sh "git clone https://github.com/rayanah/jenkins-lab-2-packer.git"
 	       sh "cd jenkins-lab-2-packer"
+                sh "docker login -u ${CREDS_USR} -p ${CREDS_PSW}"
                 sh "make"
                 sh "make build"
             }
