@@ -1,4 +1,4 @@
-all: stop start exec
+all: stop start exec 
 
 
 

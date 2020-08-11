@@ -15,6 +15,8 @@ pipeline {
     stages {
         stage ('build') {
             steps {
+	       sh "git clone https://github.com/rayanah/jenkins-lab-2-packer.git"
+	       sh "cd jenkins-lab-2-packer"
                 sh "make"
                 sh "make build"
             }
