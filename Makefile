@@ -1,5 +1,12 @@
 all: stop start exec
 
+
+
+init:
+	export PROJECT_NAME="web-server"
+	echo "$$OWNER"
+	echo "$$PROJECT_NAME"
+
 start:
 	docker run -it -d \
 		--env TF_NAMESPACE=$$TF_NAMESPACE \

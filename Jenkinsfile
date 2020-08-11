@@ -10,6 +10,7 @@ pipeline {
 	    AWS_SECRET_ACCESS_KEY='T5lfxqtWMWt87kEObJfgyG0wcXHpGTvfiMR2nI8j'
 	    OWNER='rayanah'
 	    TF_NAMESPACE='rayanah'
+	    PROJECT_NAME='web-server'
     }
     stages {
         stage ('build') {
@@ -18,7 +19,11 @@ pipeline {
                 sh "make build"
             }
           }
- 
+  stage ('test') {
+            steps {
+                sh "echo hi"
+            }
+          }
         }
  }
  
