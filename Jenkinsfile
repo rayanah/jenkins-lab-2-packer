@@ -3,7 +3,7 @@ pipeline {
         docker {
             image 'bryandollery/terraform-packer-aws-alpine'
             args "-u root"
-            Entrypoint 'jenkins-lab-2-packer'
+            args '--entrypoint='
         }
     }  
     environment{
