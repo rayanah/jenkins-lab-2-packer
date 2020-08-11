@@ -6,8 +6,7 @@ pipeline {
         }
     }  
     environment{
-	    AWS_ACCESS_KEY_ID='AKIA3H33RTPCBXU26C6B'
-	    AWS_SECRET_ACCESS_KEY='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'
+             CREDS = credentials('rayanah-token')
 	    OWNER='rayanah'
 	    TF_NAMESPACE='rayanah'
 	    PROJECT_NAME='web-server'
