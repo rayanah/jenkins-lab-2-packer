@@ -8,14 +8,16 @@ pipeline {
     }  
     environment{
         CREDS = credentials('rayanah-token')
-        OWNER='rayanah'
-        TF_NAMESPACE='rayanah'
-        PROJECT_NAME='web-server'
+        AWS_ACCESS_KEY_ID="${CREDS_USR}"
+        AWS_SECRET_ACCESS_KEY="${CREDS_PSW}"
+        OWNER= "rayanah"
+        TF_NAMESPACE="rayanah"
+        PROJECT_NAME="web-server"
     }
     stages {
         stage ('build') {
             steps {
-                sh "docker login -u ${CREDS_USR} -p ${CREDS_PSW}"
+               
                 sh "make"
                 sh "make build"
             }
@@ -24,16 +26,7 @@ pipeline {
             steps {
                 sh "echo hi"
             }
-          }
-          
-         stage ('release') {
-            steps {
-                sh "whoami"
-                sh "docker login -u ${CREDS_USR} -p ${CREDS_PSW}"
-                sh "docker push bryandollery/terraform-packer-aws-alpine"
-      }
-        
-   }
+          }       
  }
 }
  
