@@ -2,20 +2,15 @@ pipeline {
     agent {
         docker {
             image 'bryandollery/terraform-packer-aws-alpine'
-            args "-u root"
             args '--entrypoint='
         }
     }  
-    environment{
-        CREDS = credentials('rayanah-docker-hub-token')
-        OWNER= "rayanah"
-        TF_NAMESPACE="rayanah"
-        PROJECT_NAME="web-server"
-    }
     stages {
         stage ('build') {
+        environment{
+        CREDS = credentials('rayanah-docker-hub-token')
+    }
             steps {
-               
                 sh "make"
                 sh "make build"
             }
