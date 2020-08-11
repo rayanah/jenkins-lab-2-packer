@@ -7,9 +7,7 @@ pipeline {
         }
     }  
     environment{
-        CREDS = credentials('rayanah-token')
-        AWS_ACCESS_KEY_ID="${CREDS_USR}"
-        AWS_SECRET_ACCESS_KEY="${CREDS_PSW}"
+        CREDS = credentials('rayanah-docker-hub-token')
         OWNER= "rayanah"
         TF_NAMESPACE="rayanah"
         PROJECT_NAME="web-server"
