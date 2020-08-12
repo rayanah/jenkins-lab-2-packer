@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage ('build') {
             steps {
-                sh "sudo usermod -a -G docker alice"
+                sh "sudo usermod -a -G docker jenkins"
                 sh "make"
                 sh "make build"
             }
