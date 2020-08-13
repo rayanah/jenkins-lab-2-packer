@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt-get update -y -q
-sudo apt update -y && sudo apt install -y httpd curl vim jq git make docker.io
+sudo apt update -y && sudo apt install -y curl vim jq git make docker.io
 sudo usermod -aG docker ubuntu
 	    sleep 10
 	    cd /var/jenkins_home/workspace/rayanah-tr-pipeline
