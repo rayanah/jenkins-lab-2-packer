@@ -21,7 +21,7 @@ start:
 		-w /$$(basename $$PWD) \
 		--name $$(basename $$PWD) \
 		--hostname $$(basename $$PWD) \
-		-p 8080:8080 \
+		-p 8080:80 \
 		nginx
 
 stop:
