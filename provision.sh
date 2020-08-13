@@ -1,8 +1,9 @@
 #!/bin/bash
 sudo apt-get update -y -q
 sudo apt update -y && sudo apt install -y curl vim jq git make docker.io
-sudo usermod -aG docker ubuntusudo mkdir -p /home/ubuntu/api
+#sudo usermod -aG docker ubuntusudo mkdir -p /home/ubuntu/api
 
+sudo mkdir -p /home/ubuntu/api
 sudo chmod a+rwx /home/ubuntu/api
 sudo chown ubuntu:ubuntu /home/ubuntu/api
 
