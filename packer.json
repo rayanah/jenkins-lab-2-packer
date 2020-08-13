@@ -37,5 +37,5 @@
   }, {
     "type": "shell",
     "inline": [". /home/ubuntu/provision.sh"]
-  }
+  }]
 }
