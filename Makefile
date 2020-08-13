@@ -17,10 +17,12 @@ start:
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v $$PWD:/$$(basename $$PWD) \
 		-v k3s_packer:/token \
+		-v /some/content:/usr/share/nginx/html:ro \
 		-w /$$(basename $$PWD) \
 		--name $$(basename $$PWD) \
 		--hostname $$(basename $$PWD) \
-		bryandollery/terraform-packer-aws-alpine
+		-p 80:80
+		nginx
 
 stop:
 	docker rm -f $$(basename $$PWD) 2> /dev/null || true
