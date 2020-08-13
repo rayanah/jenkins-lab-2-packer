@@ -17,6 +17,7 @@ pipeline {
     stages {
         stage ('build') {
             steps {
+                sh 'docker ps -a'
                 sh "make"
                 sh "make build"
             }
