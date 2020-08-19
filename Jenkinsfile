@@ -1,5 +1,5 @@
 pipeline {
- kubernetes {
+  kubernetes {
       yaml """
 apiVersion: v1
 kind: Pod
@@ -13,11 +13,6 @@ spec:
     tty: true
 """
     }
-  agent {
-    docker {
-      image "bryandollery/terraform-packer-aws-alpine"
-    }
-  }
   environment {
     CREDS = credentials('bryan_aws_creds')
     AWS_ACCESS_KEY_ID = "${CREDS_USR}"
