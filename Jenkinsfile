@@ -12,6 +12,7 @@ spec:
   - name: pawst
     image: bryandollery/terraform-packer-aws-alpine
     tty: true
+    cmd: bash
 """
     }
   }
