@@ -1,5 +1,6 @@
 pipeline {
-  kubernetes {
+  agent {
+    kubernetes {
       yaml """
 apiVersion: v1
 kind: Pod
@@ -13,6 +14,7 @@ spec:
     tty: true
 """
     }
+  }
   environment {
     CREDS = credentials('bryan_aws_creds')
     AWS_ACCESS_KEY_ID = "${CREDS_USR}"
