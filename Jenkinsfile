@@ -25,6 +25,11 @@ spec:
     PROJECT_NAME = 'web-server'
   }
   stages {
+      stage("debug") {
+          steps {
+              sh 'whoami && ls -gAlFh && pwd'
+          }
+      }
     stage("build") {
       steps {
         sh 'packer build packer.json'
