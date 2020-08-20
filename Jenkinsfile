@@ -25,13 +25,6 @@ spec:
     PROJECT_NAME = 'web-server'
   }
   stages {
-      stage("debug") {
-          steps {
-              container('packer') {
-                  sh 'whoami && ls -gAlFh && pwd && ls -gAlFh /bin'
-              }
-          }
-      }
       stage("build") {
           steps {
               container('packer') {
