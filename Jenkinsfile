@@ -10,8 +10,7 @@ metadata:
 spec:
   containers:
   - name: pawst
-    image: bryandollery/terraform-packer-aws-alpine
-    tag: 2
+    image: bryandollery/terraform-packer-aws-alpine:2
     tty: true
 """
     }
