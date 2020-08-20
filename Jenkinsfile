@@ -11,6 +11,7 @@ spec:
   containers:
   - name: pawst
     image: bryandollery/terraform-packer-aws-alpine
+    tag: 2
     tty: true
     cmd: bash
 """
