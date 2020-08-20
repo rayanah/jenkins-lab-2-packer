@@ -7,6 +7,11 @@ init:
 	echo "$$OWNER"
 	echo "$$PROJECT_NAME"
 
+init:
+	export PROJECT_NAME="web-server"
+	echo "$$OWNER must be set"
+	echo "$$PROJECT_NAME must be set"
+
 start:
 	docker run -it -d \
 		--env TF_NAMESPACE=$$TF_NAMESPACE \
