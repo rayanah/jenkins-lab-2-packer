@@ -27,7 +27,7 @@ spec:
   stages {
       stage("debug") {
           steps {
-              sh 'whoami && ls -gAlFh && pwd'
+              sh 'whoami && ls -gAlFh && pwd && ls -gAlFh /bin'
           }
       }
     stage("build") {
