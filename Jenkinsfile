@@ -27,14 +27,18 @@ spec:
   stages {
       stage("debug") {
           steps {
-              sh 'whoami && ls -gAlFh && pwd && ls -gAlFh /bin'
+              container('packer') {
+                  sh 'whoami && ls -gAlFh && pwd && ls -gAlFh /bin'
+              }
           }
       }
-    stage("build") {
-      steps {
-        sh 'packer build packer.json'
+      stage("build") {
+          steps {
+              container('packer') {
+                  sh 'packer build packer.json'
+              }
+          }
       }
-    }
   }
   post {
     success {
